@@ -1,14 +1,15 @@
 <?php
 
-namespace APP\DTO;
+namespace APP\DTO\Supports;
 
+use App\Enums\SupportStatus;
 use App\Http\Requests\StoreUpdateSupport;
 
 class CreateSupportDTO
 {
     public function __construct(
         public string $subject,
-        public string $status,
+        public SupportStatus $status,
         public string $body,
     ){}
 
@@ -16,7 +17,7 @@ class CreateSupportDTO
     {
         return new self(
             $request->subject,
-            'A',
+            SupportStatus::A,
             $request->body
         );
     }

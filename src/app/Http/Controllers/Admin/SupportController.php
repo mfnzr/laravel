@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use APP\DTO\CreateSupportDTO;
-use APP\DTO\UpdateSupportDTO;
+use APP\DTO\Supports\CreateSupportDTO;
+use APP\DTO\Supports\UpdateSupportDTO;
 use App\Models\Support;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateSupport;
@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 class SupportController extends Controller
 {
     public function __construct(
-        protected SupportService $service
+        protected SupportService $service,
     ){}
 
     public function index(Request $request)
